@@ -1,0 +1,40 @@
+<div class="auth-wrapper">
+    <form
+      class="form-signin"
+      [formGroup]="passwordForm"
+      (ngSubmit)="changePassword()"
+    >
+      <h3 class="h3 mb-3 font-weight-normal text-center">Change Password</h3>
+      <div class="form-group">
+        <label>Current password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Enter your your password"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>New password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="newPassword"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Repeat password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="newPasswordRepeat"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-block btn-primary">update password</button>
+    </form>
+  </div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+      <div class="inner-main">
+        <h2 class="mb-4">User Profile</h2>
+        <p><strong>Name:</strong> {{ this.currentUser.pseudo }}</p>
+        <p><strong>Role:</strong> {{ this.currentUser.role }}</p>
+        <p><strong>Created:</strong> {{ this.currentUser.createdAt | date :"full":'+0200':"fr-FR" }}</p>
+        <p><strong>Orders:</strong></p>
+        <ul *ngIf="currentUser.orders">
+          <li *ngFor="let order of this.currentUser.orders">ID : {{order.id}} total : {{order.total}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-info" (click)="redirectToPassChange()">Change password</button>
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-dark" (click)="redirectToUpdateUser()">Update User</button>
+    </div>
+  </div>

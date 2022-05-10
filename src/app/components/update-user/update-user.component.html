@@ -1,0 +1,25 @@
+<div class="auth-wrapper">
+    <form class="form-signin" [formGroup]="updateForm" (ngSubmit)="updateUser()">
+      <h3 class="h3 mb-3 font-weight-normal text-center">Update User</h3>
+      <div class="form-group m-3">
+        <label>Pseudo</label>
+        <input
+          type="pseudo"
+          class="form-control"
+          formControlName="pseudo"
+          placeholder="Enter new pseudo"
+          required
+        />
+      </div>
+      <div class="form-group m-3">
+        <label>Role</label>
+        <select formControlName="role" class="m-2">
+            <option *ngFor="let role of this.roles"
+            [selected]="ngSelect"
+            [value]="role"
+            >{{role}}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-block btn-primary m-3">Update</button>
+    </form>
+  </div>
